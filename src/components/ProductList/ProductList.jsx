@@ -9,7 +9,7 @@ export const ProductList = ({ products }) => {
       {products.map(product => (
         <div key={product.id} className={css.cardWrapper}>
           <Link to={`${product.id}`} state={location}>
-            <img src="https://via.placeholder.com/200x100" alt="" />
+            <img src="https://picsum.photos/200/200?grayscale" alt="" />
             <h3 className={css.productName}>{product.name}</h3>
           </Link>
         </div>
