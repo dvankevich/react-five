@@ -26,6 +26,9 @@ export const AppBar = () => {
         <NavLink to="/products" className={buildLinkClass}>
           Products
         </NavLink>
+        <NavLink to="/dashboard" className={buildLinkClass}>
+          Dashboard
+        </NavLink>
       </nav>
     </header>
   );
