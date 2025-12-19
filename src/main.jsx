@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'modern-normalize';
 import { App } from './components/App';
 import './index.css';
+import { UserProvider } from './context/userContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         v7_relativeSplatPath: true,
       }}
     >
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
