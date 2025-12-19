@@ -1,8 +1,8 @@
 import { use } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useUser } from '../context/userContext'; 
+import { useUser } from '../context/userContext';
 
-export const Dashboard = () => {
+const Dashboard = () => {
   const { isLoggedIn } = useUser();
 
   if (!isLoggedIn) {
@@ -11,3 +11,5 @@ export const Dashboard = () => {
 
   return <h1>Ласкаво просимо в особистий кабінет</h1>;
 };
+
+export default Dashboard;

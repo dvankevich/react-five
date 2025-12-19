@@ -2,7 +2,6 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NotFound from '../pages/NotFound';
 import { AppBar } from './AppBar/AppBar';
-import { Dashboard } from '../pages/Dashboard';
 import css from './App.module.css';
 
 const Home = lazy(() => import('../pages/Home'));
@@ -12,6 +11,8 @@ const Products = lazy(() => import('../pages/Products'));
 const Mission = lazy(() => import('./Mission/Mission'));
 const Team = lazy(() => import('./Team/Team'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
+const Login = lazy(() => import('../pages/Login'));
+const Dashboard = lazy(() => import('../pages/Dashboard'));
 
 export const App = () => {
   return (
@@ -29,6 +30,7 @@ export const App = () => {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
