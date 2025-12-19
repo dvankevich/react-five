@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-import clsx from "clsx";
-import css from "./AppBar.module.css";
+import { NavLink } from 'react-router-dom';
+import clsx from 'clsx';
+import css from './AppBar.module.css';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -9,12 +9,12 @@ const buildLinkClass = ({ isActive }) => {
 export const AppBar = () => {
   return (
     <header className={css.header}>
-      <p className={css.logo}>
+      <NavLink to="/" className={css.logo}>
         <span role="img" aria-label="computer icon">
           💻
-        </span>{" "}
+        </span>{' '}
         GoMerch Store
-      </p>
+      </NavLink>
 
       <nav className={css.nav}>
         <NavLink to="/" className={buildLinkClass}>
