@@ -12,14 +12,30 @@ export default function Products() {
     product.name.toLowerCase().includes(productName.toLowerCase())
   );
 
-  const updateQueryString = name => {
-    const nextParams = name !== '' ? { name } : {};
-    setSearchParams(nextParams);
+  // const updateQueryString = name => {
+  //   const nextParams = name !== '' ? { name } : {};
+  //   setSearchParams(nextParams);
+  // };
+
+  const updateSearchParams = (key, value) => {
+    const updatedParams = new URLSearchParams(searchParams);
+
+    if (value !== '') {
+      updatedParams.set(key, value);
+    } else {
+      updatedParams.delete(key);
+    }
+
+    setSearchParams(updatedParams);
   };
 
   return (
     <main>
-      <SearchBox value={productName} onChange={updateQueryString} />
+      {/* <SearchBox value={productName} onChange={updateQueryString} /> */}
+      <SearchBox
+        value={productName}
+        onChange={value => updateSearchParams('name', value)}
+      />
       <ProductList products={visibleProducts} />
     </main>
   );
