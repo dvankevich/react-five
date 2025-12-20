@@ -11,7 +11,7 @@ export default function ProductDetails() {
   return (
     <main>
       <BackLink to={backLinkHref}>Back to products</BackLink>
-      <img src="https://via.placeholder.com/960x240" alt="" />
+      <img src="https://picsum.photos/300/300?grayscale" alt="" />
       <div>
         <h2>
           Product - {product.name} - {id}
