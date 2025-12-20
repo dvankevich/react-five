@@ -2,6 +2,8 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NotFound from '../pages/NotFound';
 import { AppBar } from './AppBar/AppBar';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import css from './App.module.css';
 
 const Home = lazy(() => import('../pages/Home'));
@@ -15,6 +17,12 @@ const Login = lazy(() => import('../pages/Login'));
 const Dashboard = lazy(() => import('../pages/Dashboard'));
 
 export const App = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log('Current location:', location);
+  }, [location]);
+
   return (
     <div className={css.container}>
       <AppBar />
